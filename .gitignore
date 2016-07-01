@@ -1,4 +1,1 @@
-*.csv
-*.txt
-*.pdf
-*.README
+data/
