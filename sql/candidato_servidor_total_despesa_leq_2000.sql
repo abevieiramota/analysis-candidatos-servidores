@@ -15,4 +15,15 @@ inner join
 	having sum(valor_despesa) <= 2000
 	order by sum(valor_despesa) asc
 ) as total on (c.sequencial_candidato = total.sequencial_candidato)
-order by total.total_despesa asc
+order by total.total_despesa asc;
+
+select descricao_cargo, desc_sit_tot_turno, count(*)
+from candidato c
+where not exists
+(
+	select 1
+	from despesa d
+	where d.sequencial_candidato = c.sequencial_candidato
+)
+and num_turno = 1
+group by desc_sit_tot_turno, descricao_cargo;
