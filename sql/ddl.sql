@@ -3,8 +3,8 @@ CREATE TABLE candidato
   ano_eleicao smallint,
   num_turno smallint,
   sigla_uf character varying(2),
-  sigla_ue character varying(2),
-  descricao_ue character varying(20),
+  sigla_ue character varying(10),
+  descricao_ue character varying(30),
   codigo_cargo smallint,
   descricao_cargo character varying(50),
   nome_candidato character varying(120),
@@ -18,7 +18,7 @@ CREATE TABLE candidato
   sigla_partido character varying(10),
   nome_partido character varying(80),
   codigo_legenda bigint,
-  sigla_legenda character varying(20),
+  sigla_legenda character varying(30),
   composicao_legenda character varying(150),
   nome_legenda character varying(100),
   codigo_ocupacao smallint,
@@ -32,8 +32,8 @@ CREATE TABLE candidato
   descricao_grau_instrucao character varying(40),
   codigo_estado_civil smallint,
   descricao_estado_civil character varying(50),
-  codigo_cor_raca smallint,
-  descricao_cor_raca character varying(15),
+  --codigo_cor_raca smallint,
+  --descricao_cor_raca character varying(15),
   codigo_nacionalidade smallint,
   descricao_nacionalidade character varying(50),
   sigla_uf_nascimento character varying(2),
@@ -67,7 +67,7 @@ CREATE TABLE despesa
   data_da_despesa character varying(20),
   valor_despesa bigint,
   tipo_despesa character varying(200),
-  "descriçao_da_despesa" character varying(100)
+  "descriçao_da_despesa" character varying(300)
 )
 WITH (
   OIDS=FALSE

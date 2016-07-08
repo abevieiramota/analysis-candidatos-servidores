@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>Carga Candidato</name>
+    <name>Carga Candidato 2012 CE</name>
     <description/>
     <extended_description/>
     <trans_version/>
@@ -9,11 +9,6 @@
     <trans_status>0</trans_status>
     <directory>&#x2f;</directory>
     <parameters>
-        <parameter>
-            <name>candidatos</name>
-            <default_value>consulta_cand_2014&#x5c;</default_value>
-            <description/>
-        </parameter>
     </parameters>
     <log>
 <trans-log-table><connection/>
@@ -105,7 +100,7 @@
     </attributes>
   </connection>
   <order>
-  <hop> <from>Text file input - consulta_cand_2014_&#x3c;estado&#x3e;.txt</from><to>Select values</to><enabled>Y</enabled> </hop>
+  <hop> <from>Text file input - consulta_cand_2012_CE.txt</from><to>Select values</to><enabled>Y</enabled> </hop>
   <hop> <from>Select values</from><to>Strings cut</to><enabled>Y</enabled> </hop>
   <hop> <from>Strings cut</from><to>Table output - candidato</to><enabled>Y</enabled> </hop>
   </order>
@@ -258,11 +253,23 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <fields>      <field>        <name>ANO_ELEICAO</name>
+    <fields>      <field>        <name>DATA_GERACAO</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>HORA_GERACAO</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>ANO_ELEICAO</name>
         <rename/>
         <length>-2</length>
         <precision>-2</precision>
       </field>      <field>        <name>NUM_TURNO</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>DESCRICAO_ELEICAO</name>
         <rename/>
         <length>-2</length>
         <precision>-2</precision>
@@ -386,14 +393,6 @@
         <rename/>
         <length>-2</length>
         <precision>-2</precision>
-      </field>      <field>        <name>CODIGO_COR_RACA</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>DESCRICAO_COR_RACA</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
       </field>      <field>        <name>CODIGO_NACIONALIDADE</name>
         <rename/>
         <length>-2</length>
@@ -496,192 +495,184 @@
     <return_field/>
     <fields>
         <field>
-          <column_name>ANO_ELEICAO</column_name>
+          <column_name>ano_eleicao</column_name>
           <stream_name>ANO_ELEICAO</stream_name>
         </field>
         <field>
-          <column_name>NUM_TURNO</column_name>
+          <column_name>num_turno</column_name>
           <stream_name>NUM_TURNO</stream_name>
         </field>
         <field>
-          <column_name>SIGLA_UF</column_name>
+          <column_name>sigla_uf</column_name>
           <stream_name>SIGLA_UF</stream_name>
         </field>
         <field>
-          <column_name>SIGLA_UE</column_name>
+          <column_name>sigla_ue</column_name>
           <stream_name>SIGLA_UE</stream_name>
         </field>
         <field>
-          <column_name>DESCRICAO_UE</column_name>
+          <column_name>descricao_ue</column_name>
           <stream_name>DESCRICAO_UE</stream_name>
         </field>
         <field>
-          <column_name>CODIGO_CARGO</column_name>
+          <column_name>codigo_cargo</column_name>
           <stream_name>CODIGO_CARGO</stream_name>
         </field>
         <field>
-          <column_name>DESCRICAO_CARGO</column_name>
+          <column_name>descricao_cargo</column_name>
           <stream_name>DESCRICAO_CARGO</stream_name>
         </field>
         <field>
-          <column_name>NOME_CANDIDATO</column_name>
+          <column_name>nome_candidato</column_name>
           <stream_name>NOME_CANDIDATO</stream_name>
         </field>
         <field>
-          <column_name>SEQUENCIAL_CANDIDATO</column_name>
+          <column_name>sequencial_candidato</column_name>
           <stream_name>SEQUENCIAL_CANDIDATO</stream_name>
         </field>
         <field>
-          <column_name>NUMERO_CANDIDATO</column_name>
+          <column_name>numero_candidato</column_name>
           <stream_name>NUMERO_CANDIDATO</stream_name>
         </field>
         <field>
-          <column_name>CPF_CANDIDATO</column_name>
+          <column_name>cpf_candidato</column_name>
           <stream_name>CPF_CANDIDATO</stream_name>
         </field>
         <field>
-          <column_name>NOME_URNA_CANDIDATO</column_name>
+          <column_name>nome_urna_candidato</column_name>
           <stream_name>NOME_URNA_CANDIDATO</stream_name>
         </field>
         <field>
-          <column_name>COD_SITUACAO_CANDIDATURA</column_name>
+          <column_name>cod_situacao_candidatura</column_name>
           <stream_name>COD_SITUACAO_CANDIDATURA</stream_name>
         </field>
         <field>
-          <column_name>DES_SITUACAO_CANDIDATURA</column_name>
+          <column_name>des_situacao_candidatura</column_name>
           <stream_name>DES_SITUACAO_CANDIDATURA</stream_name>
         </field>
         <field>
-          <column_name>NUMERO_PARTIDO</column_name>
+          <column_name>numero_partido</column_name>
           <stream_name>NUMERO_PARTIDO</stream_name>
         </field>
         <field>
-          <column_name>SIGLA_PARTIDO</column_name>
+          <column_name>sigla_partido</column_name>
           <stream_name>SIGLA_PARTIDO</stream_name>
         </field>
         <field>
-          <column_name>NOME_PARTIDO</column_name>
+          <column_name>nome_partido</column_name>
           <stream_name>NOME_PARTIDO</stream_name>
         </field>
         <field>
-          <column_name>CODIGO_LEGENDA</column_name>
+          <column_name>codigo_legenda</column_name>
           <stream_name>CODIGO_LEGENDA</stream_name>
         </field>
         <field>
-          <column_name>SIGLA_LEGENDA</column_name>
+          <column_name>sigla_legenda</column_name>
           <stream_name>SIGLA_LEGENDA</stream_name>
         </field>
         <field>
-          <column_name>COMPOSICAO_LEGENDA</column_name>
+          <column_name>composicao_legenda</column_name>
           <stream_name>COMPOSICAO_LEGENDA</stream_name>
         </field>
         <field>
-          <column_name>NOME_LEGENDA</column_name>
+          <column_name>nome_legenda</column_name>
           <stream_name>NOME_LEGENDA</stream_name>
         </field>
         <field>
-          <column_name>CODIGO_OCUPACAO</column_name>
+          <column_name>codigo_ocupacao</column_name>
           <stream_name>CODIGO_OCUPACAO</stream_name>
         </field>
         <field>
-          <column_name>DESCRICAO_OCUPACAO</column_name>
+          <column_name>descricao_ocupacao</column_name>
           <stream_name>DESCRICAO_OCUPACAO</stream_name>
         </field>
         <field>
-          <column_name>DATA_NASCIMENTO</column_name>
+          <column_name>data_nascimento</column_name>
           <stream_name>DATA_NASCIMENTO</stream_name>
         </field>
         <field>
-          <column_name>NUM_TITULO_ELEITORAL_CANDIDATO</column_name>
+          <column_name>num_titulo_eleitoral_candidato</column_name>
           <stream_name>NUM_TITULO_ELEITORAL_CANDIDATO</stream_name>
         </field>
         <field>
-          <column_name>IDADE_DATA_ELEICAO</column_name>
+          <column_name>idade_data_eleicao</column_name>
           <stream_name>IDADE_DATA_ELEICAO</stream_name>
         </field>
         <field>
-          <column_name>CODIGO_SEXO</column_name>
+          <column_name>codigo_sexo</column_name>
           <stream_name>CODIGO_SEXO</stream_name>
         </field>
         <field>
-          <column_name>DESCRICAO_SEXO</column_name>
+          <column_name>descricao_sexo</column_name>
           <stream_name>DESCRICAO_SEXO</stream_name>
         </field>
         <field>
-          <column_name>COD_GRAU_INSTRUCAO</column_name>
+          <column_name>cod_grau_instrucao</column_name>
           <stream_name>COD_GRAU_INSTRUCAO</stream_name>
         </field>
         <field>
-          <column_name>DESCRICAO_GRAU_INSTRUCAO</column_name>
+          <column_name>descricao_grau_instrucao</column_name>
           <stream_name>DESCRICAO_GRAU_INSTRUCAO</stream_name>
         </field>
         <field>
-          <column_name>CODIGO_ESTADO_CIVIL</column_name>
+          <column_name>codigo_estado_civil</column_name>
           <stream_name>CODIGO_ESTADO_CIVIL</stream_name>
         </field>
         <field>
-          <column_name>DESCRICAO_ESTADO_CIVIL</column_name>
+          <column_name>descricao_estado_civil</column_name>
           <stream_name>DESCRICAO_ESTADO_CIVIL</stream_name>
         </field>
         <field>
-          <column_name>CODIGO_COR_RACA</column_name>
-          <stream_name>CODIGO_COR_RACA</stream_name>
-        </field>
-        <field>
-          <column_name>DESCRICAO_COR_RACA</column_name>
-          <stream_name>DESCRICAO_COR_RACA</stream_name>
-        </field>
-        <field>
-          <column_name>CODIGO_NACIONALIDADE</column_name>
+          <column_name>codigo_nacionalidade</column_name>
           <stream_name>CODIGO_NACIONALIDADE</stream_name>
         </field>
         <field>
-          <column_name>DESCRICAO_NACIONALIDADE</column_name>
+          <column_name>descricao_nacionalidade</column_name>
           <stream_name>DESCRICAO_NACIONALIDADE</stream_name>
         </field>
         <field>
-          <column_name>SIGLA_UF_NASCIMENTO</column_name>
+          <column_name>sigla_uf_nascimento</column_name>
           <stream_name>SIGLA_UF_NASCIMENTO</stream_name>
         </field>
         <field>
-          <column_name>CODIGO_MUNICIPIO_NASCIMENTO</column_name>
+          <column_name>codigo_municipio_nascimento</column_name>
           <stream_name>CODIGO_MUNICIPIO_NASCIMENTO</stream_name>
         </field>
         <field>
-          <column_name>NOME_MUNICIPIO_NASCIMENTO</column_name>
+          <column_name>nome_municipio_nascimento</column_name>
           <stream_name>NOME_MUNICIPIO_NASCIMENTO</stream_name>
         </field>
         <field>
-          <column_name>DESPESA_MAX_CAMPANHA</column_name>
+          <column_name>despesa_max_campanha</column_name>
           <stream_name>DESPESA_MAX_CAMPANHA</stream_name>
         </field>
         <field>
-          <column_name>COD_SIT_TOT_TURNO</column_name>
+          <column_name>cod_sit_tot_turno</column_name>
           <stream_name>COD_SIT_TOT_TURNO</stream_name>
         </field>
         <field>
-          <column_name>DESC_SIT_TOT_TURNO</column_name>
+          <column_name>desc_sit_tot_turno</column_name>
           <stream_name>DESC_SIT_TOT_TURNO</stream_name>
         </field>
         <field>
-          <column_name>NM_EMAIL</column_name>
+          <column_name>nm_email</column_name>
           <stream_name>NM_EMAIL</stream_name>
         </field>
         <field>
-          <column_name>CPF_CANDIDATO_PARCIAL</column_name>
+          <column_name>cpf_candidato_parcial</column_name>
           <stream_name>CPF_CANDIDATO_PARCIAL</stream_name>
         </field>
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>736</xloc>
+      <xloc>528</xloc>
       <yloc>240</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Text file input - consulta_cand_2014_&#x3c;estado&#x3e;.txt</name>
+    <name>Text file input - consulta_cand_2012_CE.txt</name>
     <type>TextFileInput</type>
     <description/>
     <distribute>Y</distribute>
@@ -718,8 +709,8 @@
     <encoding>ISO-8859-1</encoding>
     <add_to_result_filenames>Y</add_to_result_filenames>
     <file>
-      <name>&#x24;&#x7b;Internal.Transformation.Filename.Directory&#x7d;&#x5c;..&#x5c;data&#x5c;&#x24;&#x7b;candidatos&#x7d;</name>
-      <filemask>.&#x2a;&#x5c;.txt</filemask>
+      <name>&#x24;&#x7b;Internal.Transformation.Filename.Directory&#x7d;&#x5c;..&#x5c;data&#x5c;consulta_cand_2012&#x5c;</name>
+      <filemask>consulta_cand_2012_CE.txt</filemask>
       <exclude_filemask/>
       <file_required>N</file_required>
       <include_subfolders>N</include_subfolders>
@@ -733,9 +724,9 @@
         <name>DATA_GERACAO</name>
         <type>Date</type>
         <format>dd&#x2f;MM&#x2f;yyyy</format>
-        <currency>R&#x24;</currency>
-        <decimal>,</decimal>
-        <group>.</group>
+        <currency>&#x24;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
         <nullif>-</nullif>
         <ifnull/>
         <position>-1</position>
@@ -746,11 +737,11 @@
       </field>
       <field>
         <name>HORA_GERACAO</name>
-        <type>Timestamp</type>
-        <format>HH&#x3a;mm&#x3a;ss</format>
-        <currency>R&#x24;</currency>
-        <decimal>,</decimal>
-        <group>.</group>
+        <type>String</type>
+        <format/>
+        <currency>&#x24;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
         <nullif>-</nullif>
         <ifnull/>
         <position>-1</position>
@@ -763,9 +754,9 @@
         <name>ANO_ELEICAO</name>
         <type>Integer</type>
         <format>&#x23;</format>
-        <currency>R&#x24;</currency>
-        <decimal>,</decimal>
-        <group>.</group>
+        <currency>&#x24;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
         <nullif>-</nullif>
         <ifnull/>
         <position>-1</position>
@@ -778,9 +769,9 @@
         <name>NUM_TURNO</name>
         <type>Integer</type>
         <format>&#x23;</format>
-        <currency>R&#x24;</currency>
-        <decimal>,</decimal>
-        <group>.</group>
+        <currency>&#x24;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
         <nullif>-</nullif>
         <ifnull/>
         <position>-1</position>
@@ -793,9 +784,9 @@
         <name>DESCRICAO_ELEICAO</name>
         <type>String</type>
         <format/>
-        <currency>R&#x24;</currency>
-        <decimal>,</decimal>
-        <group>.</group>
+        <currency>&#x24;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
         <nullif>-</nullif>
         <ifnull/>
         <position>-1</position>
@@ -808,9 +799,9 @@
         <name>SIGLA_UF</name>
         <type>String</type>
         <format/>
-        <currency>R&#x24;</currency>
-        <decimal>,</decimal>
-        <group>.</group>
+        <currency>&#x24;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
         <nullif>-</nullif>
         <ifnull/>
         <position>-1</position>
@@ -823,13 +814,13 @@
         <name>SIGLA_UE</name>
         <type>String</type>
         <format/>
-        <currency>R&#x24;</currency>
-        <decimal>,</decimal>
-        <group>.</group>
+        <currency>&#x24;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
         <nullif>-</nullif>
         <ifnull/>
         <position>-1</position>
-        <length>2</length>
+        <length>10</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
         <repeat>N</repeat>
@@ -838,9 +829,9 @@
         <name>DESCRICAO_UE</name>
         <type>String</type>
         <format/>
-        <currency>R&#x24;</currency>
-        <decimal>,</decimal>
-        <group>.</group>
+        <currency>&#x24;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
         <nullif>-</nullif>
         <ifnull/>
         <position>-1</position>
@@ -853,9 +844,9 @@
         <name>CODIGO_CARGO</name>
         <type>Integer</type>
         <format>&#x23;</format>
-        <currency>R&#x24;</currency>
-        <decimal>,</decimal>
-        <group>.</group>
+        <currency>&#x24;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
         <nullif>-</nullif>
         <ifnull/>
         <position>-1</position>
@@ -868,9 +859,9 @@
         <name>DESCRICAO_CARGO</name>
         <type>String</type>
         <format/>
-        <currency>R&#x24;</currency>
-        <decimal>,</decimal>
-        <group>.</group>
+        <currency>&#x24;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
         <nullif>-</nullif>
         <ifnull/>
         <position>-1</position>
@@ -883,9 +874,9 @@
         <name>NOME_CANDIDATO</name>
         <type>String</type>
         <format/>
-        <currency>R&#x24;</currency>
-        <decimal>,</decimal>
-        <group>.</group>
+        <currency>&#x24;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
         <nullif>-</nullif>
         <ifnull/>
         <position>-1</position>
@@ -898,9 +889,9 @@
         <name>SEQUENCIAL_CANDIDATO</name>
         <type>Integer</type>
         <format>&#x23;</format>
-        <currency>R&#x24;</currency>
-        <decimal>,</decimal>
-        <group>.</group>
+        <currency>&#x24;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
         <nullif>-</nullif>
         <ifnull/>
         <position>-1</position>
@@ -913,9 +904,9 @@
         <name>NUMERO_CANDIDATO</name>
         <type>Integer</type>
         <format>&#x23;</format>
-        <currency>R&#x24;</currency>
-        <decimal>,</decimal>
-        <group>.</group>
+        <currency>&#x24;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
         <nullif>-</nullif>
         <ifnull/>
         <position>-1</position>
@@ -928,9 +919,9 @@
         <name>CPF_CANDIDATO</name>
         <type>String</type>
         <format>&#x23;</format>
-        <currency>R&#x24;</currency>
-        <decimal>,</decimal>
-        <group>.</group>
+        <currency>&#x24;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
         <nullif>-</nullif>
         <ifnull/>
         <position>-1</position>
@@ -943,9 +934,9 @@
         <name>NOME_URNA_CANDIDATO</name>
         <type>String</type>
         <format/>
-        <currency>R&#x24;</currency>
-        <decimal>,</decimal>
-        <group>.</group>
+        <currency>&#x24;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
         <nullif>-</nullif>
         <ifnull/>
         <position>-1</position>
@@ -958,9 +949,9 @@
         <name>COD_SITUACAO_CANDIDATURA</name>
         <type>Integer</type>
         <format>&#x23;</format>
-        <currency>R&#x24;</currency>
-        <decimal>,</decimal>
-        <group>.</group>
+        <currency>&#x24;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
         <nullif>-</nullif>
         <ifnull/>
         <position>-1</position>
@@ -973,9 +964,9 @@
         <name>DES_SITUACAO_CANDIDATURA</name>
         <type>String</type>
         <format/>
-        <currency>R&#x24;</currency>
-        <decimal>,</decimal>
-        <group>.</group>
+        <currency>&#x24;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
         <nullif>-</nullif>
         <ifnull/>
         <position>-1</position>
@@ -988,9 +979,9 @@
         <name>NUMERO_PARTIDO</name>
         <type>Integer</type>
         <format>&#x23;</format>
-        <currency>R&#x24;</currency>
-        <decimal>,</decimal>
-        <group>.</group>
+        <currency>&#x24;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
         <nullif>-</nullif>
         <ifnull/>
         <position>-1</position>
@@ -1003,9 +994,9 @@
         <name>SIGLA_PARTIDO</name>
         <type>String</type>
         <format/>
-        <currency>R&#x24;</currency>
-        <decimal>,</decimal>
-        <group>.</group>
+        <currency>&#x24;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
         <nullif>-</nullif>
         <ifnull/>
         <position>-1</position>
@@ -1018,9 +1009,9 @@
         <name>NOME_PARTIDO</name>
         <type>String</type>
         <format/>
-        <currency>R&#x24;</currency>
-        <decimal>,</decimal>
-        <group>.</group>
+        <currency>&#x24;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
         <nullif>-</nullif>
         <ifnull/>
         <position>-1</position>
@@ -1033,9 +1024,9 @@
         <name>CODIGO_LEGENDA</name>
         <type>Integer</type>
         <format>&#x23;</format>
-        <currency>R&#x24;</currency>
-        <decimal>,</decimal>
-        <group>.</group>
+        <currency>&#x24;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
         <nullif>-</nullif>
         <ifnull/>
         <position>-1</position>
@@ -1048,9 +1039,9 @@
         <name>SIGLA_LEGENDA</name>
         <type>String</type>
         <format/>
-        <currency>R&#x24;</currency>
-        <decimal>,</decimal>
-        <group>.</group>
+        <currency>&#x24;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
         <nullif>-</nullif>
         <ifnull/>
         <position>-1</position>
@@ -1063,9 +1054,9 @@
         <name>COMPOSICAO_LEGENDA</name>
         <type>String</type>
         <format/>
-        <currency>R&#x24;</currency>
-        <decimal>,</decimal>
-        <group>.</group>
+        <currency>&#x24;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
         <nullif>-</nullif>
         <ifnull/>
         <position>-1</position>
@@ -1078,9 +1069,9 @@
         <name>NOME_LEGENDA</name>
         <type>String</type>
         <format/>
-        <currency>R&#x24;</currency>
-        <decimal>,</decimal>
-        <group>.</group>
+        <currency>&#x24;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
         <nullif>-</nullif>
         <ifnull/>
         <position>-1</position>
@@ -1093,9 +1084,9 @@
         <name>CODIGO_OCUPACAO</name>
         <type>Integer</type>
         <format>&#x23;</format>
-        <currency>R&#x24;</currency>
-        <decimal>,</decimal>
-        <group>.</group>
+        <currency>&#x24;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
         <nullif>-</nullif>
         <ifnull/>
         <position>-1</position>
@@ -1108,9 +1099,9 @@
         <name>DESCRICAO_OCUPACAO</name>
         <type>String</type>
         <format/>
-        <currency>R&#x24;</currency>
-        <decimal>,</decimal>
-        <group>.</group>
+        <currency>&#x24;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
         <nullif>-</nullif>
         <ifnull/>
         <position>-1</position>
@@ -1123,9 +1114,9 @@
         <name>DATA_NASCIMENTO</name>
         <type>Date</type>
         <format>dd&#x2f;MM&#x2f;yyyy</format>
-        <currency>R&#x24;</currency>
-        <decimal>,</decimal>
-        <group>.</group>
+        <currency>&#x24;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
         <nullif>-</nullif>
         <ifnull/>
         <position>-1</position>
@@ -1138,9 +1129,9 @@
         <name>NUM_TITULO_ELEITORAL_CANDIDATO</name>
         <type>Integer</type>
         <format>&#x23;</format>
-        <currency>R&#x24;</currency>
-        <decimal>,</decimal>
-        <group>.</group>
+        <currency>&#x24;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
         <nullif>-</nullif>
         <ifnull/>
         <position>-1</position>
@@ -1153,9 +1144,9 @@
         <name>IDADE_DATA_ELEICAO</name>
         <type>Integer</type>
         <format>&#x23;</format>
-        <currency>R&#x24;</currency>
-        <decimal>,</decimal>
-        <group>.</group>
+        <currency>&#x24;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
         <nullif>-</nullif>
         <ifnull/>
         <position>-1</position>
@@ -1168,9 +1159,9 @@
         <name>CODIGO_SEXO</name>
         <type>Integer</type>
         <format>&#x23;</format>
-        <currency>R&#x24;</currency>
-        <decimal>,</decimal>
-        <group>.</group>
+        <currency>&#x24;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
         <nullif>-</nullif>
         <ifnull/>
         <position>-1</position>
@@ -1183,9 +1174,9 @@
         <name>DESCRICAO_SEXO</name>
         <type>String</type>
         <format/>
-        <currency>R&#x24;</currency>
-        <decimal>,</decimal>
-        <group>.</group>
+        <currency>&#x24;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
         <nullif>-</nullif>
         <ifnull/>
         <position>-1</position>
@@ -1198,9 +1189,9 @@
         <name>COD_GRAU_INSTRUCAO</name>
         <type>Integer</type>
         <format>&#x23;</format>
-        <currency>R&#x24;</currency>
-        <decimal>,</decimal>
-        <group>.</group>
+        <currency>&#x24;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
         <nullif>-</nullif>
         <ifnull/>
         <position>-1</position>
@@ -1213,9 +1204,9 @@
         <name>DESCRICAO_GRAU_INSTRUCAO</name>
         <type>String</type>
         <format/>
-        <currency>R&#x24;</currency>
-        <decimal>,</decimal>
-        <group>.</group>
+        <currency>&#x24;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
         <nullif>-</nullif>
         <ifnull/>
         <position>-1</position>
@@ -1228,9 +1219,9 @@
         <name>CODIGO_ESTADO_CIVIL</name>
         <type>Integer</type>
         <format>&#x23;</format>
-        <currency>R&#x24;</currency>
-        <decimal>,</decimal>
-        <group>.</group>
+        <currency>&#x24;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
         <nullif>-</nullif>
         <ifnull/>
         <position>-1</position>
@@ -1243,9 +1234,9 @@
         <name>DESCRICAO_ESTADO_CIVIL</name>
         <type>String</type>
         <format/>
-        <currency>R&#x24;</currency>
-        <decimal>,</decimal>
-        <group>.</group>
+        <currency>&#x24;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
         <nullif>-</nullif>
         <ifnull/>
         <position>-1</position>
@@ -1255,42 +1246,12 @@
         <repeat>N</repeat>
       </field>
       <field>
-        <name>CODIGO_COR_RACA</name>
-        <type>Integer</type>
-        <format>&#x23;</format>
-        <currency>R&#x24;</currency>
-        <decimal>,</decimal>
-        <group>.</group>
-        <nullif>-</nullif>
-        <ifnull/>
-        <position>-1</position>
-        <length>15</length>
-        <precision>0</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-      </field>
-      <field>
-        <name>DESCRICAO_COR_RACA</name>
-        <type>String</type>
-        <format/>
-        <currency>R&#x24;</currency>
-        <decimal>,</decimal>
-        <group>.</group>
-        <nullif>-</nullif>
-        <ifnull/>
-        <position>-1</position>
-        <length>8</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-      </field>
-      <field>
         <name>CODIGO_NACIONALIDADE</name>
         <type>Integer</type>
         <format>&#x23;</format>
-        <currency>R&#x24;</currency>
-        <decimal>,</decimal>
-        <group>.</group>
+        <currency>&#x24;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
         <nullif>-</nullif>
         <ifnull/>
         <position>-1</position>
@@ -1303,9 +1264,9 @@
         <name>DESCRICAO_NACIONALIDADE</name>
         <type>String</type>
         <format/>
-        <currency>R&#x24;</currency>
-        <decimal>,</decimal>
-        <group>.</group>
+        <currency>&#x24;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
         <nullif>-</nullif>
         <ifnull/>
         <position>-1</position>
@@ -1318,9 +1279,9 @@
         <name>SIGLA_UF_NASCIMENTO</name>
         <type>String</type>
         <format/>
-        <currency>R&#x24;</currency>
-        <decimal>,</decimal>
-        <group>.</group>
+        <currency>&#x24;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
         <nullif>-</nullif>
         <ifnull/>
         <position>-1</position>
@@ -1333,9 +1294,9 @@
         <name>CODIGO_MUNICIPIO_NASCIMENTO</name>
         <type>Integer</type>
         <format>&#x23;</format>
-        <currency>R&#x24;</currency>
-        <decimal>,</decimal>
-        <group>.</group>
+        <currency>&#x24;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
         <nullif>-</nullif>
         <ifnull/>
         <position>-1</position>
@@ -1348,9 +1309,9 @@
         <name>NOME_MUNICIPIO_NASCIMENTO</name>
         <type>String</type>
         <format/>
-        <currency>R&#x24;</currency>
-        <decimal>,</decimal>
-        <group>.</group>
+        <currency>&#x24;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
         <nullif>-</nullif>
         <ifnull/>
         <position>-1</position>
@@ -1361,11 +1322,11 @@
       </field>
       <field>
         <name>DESPESA_MAX_CAMPANHA</name>
-        <type>Number</type>
-        <format>&#x23;.&#x23;</format>
-        <currency>R&#x24;</currency>
+        <type>Integer</type>
+        <format>&#x23;</format>
+        <currency>&#x24;</currency>
         <decimal>.</decimal>
-        <group/>
+        <group>,</group>
         <nullif>-</nullif>
         <ifnull/>
         <position>-1</position>
@@ -1378,9 +1339,9 @@
         <name>COD_SIT_TOT_TURNO</name>
         <type>Integer</type>
         <format>&#x23;</format>
-        <currency>R&#x24;</currency>
-        <decimal>,</decimal>
-        <group>.</group>
+        <currency>&#x24;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
         <nullif>-</nullif>
         <ifnull/>
         <position>-1</position>
@@ -1393,9 +1354,9 @@
         <name>DESC_SIT_TOT_TURNO</name>
         <type>String</type>
         <format/>
-        <currency>R&#x24;</currency>
-        <decimal>,</decimal>
-        <group>.</group>
+        <currency>&#x24;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
         <nullif>-</nullif>
         <ifnull/>
         <position>-1</position>
@@ -1408,9 +1369,9 @@
         <name>NM_EMAIL</name>
         <type>String</type>
         <format/>
-        <currency>R&#x24;</currency>
-        <decimal>,</decimal>
-        <group>.</group>
+        <currency>&#x24;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
         <nullif>-</nullif>
         <ifnull/>
         <position>-1</position>
